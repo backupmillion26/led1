@@ -1,0 +1,284 @@
+/* ============================= */
+/*         BACKGROUND / LAYOUT  */
+/* ============================= */
+html {
+  overflow-x: initial !important;
+}
+/* Fond dégradé proche du style Ledger */
+.bg-grey-linear {
+  background: linear-gradient(109deg, #000 11.64%, #181818 49.04%, #000 86.45%);
+  background-image: linear-gradient(109deg, rgb(0, 0, 0) 11.64%, rgb(24, 24, 24) 49.04%, rgb(0, 0, 0) 86.45%);
+  /* Dégradé noir -> gris -> noir avec bande grise au milieu */
+}
+
+/* ============================= */
+/*           ANIMATIONS         */
+/* ============================= */
+/* Animation for contact section elements */
+.contact-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.contact-fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.contact-fade-in-up:nth-child(1) { transition-delay: 0.1s; }
+.contact-fade-in-up:nth-child(2) { transition-delay: 0.3s; }
+
+/* ============================= */
+/*         LAYOUT UTILS         */
+/* ============================= */
+/* Largeur max : 1440px + centrage du container */
+.max-w-screen-2xl {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Marges horizontales */
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 768px) {
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:px-24 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+/* Marges verticales */
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Barre séparatrice */
+.h-1 {
+  height: 1px;
+}
+.bg-divider-dark {
+  background-color: #444;
+}
+
+/* Grille : 1 colonne sur mobile, 2 en md+ */
+.grid {
+  display: grid;
+}
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.gap-12 {
+  gap: 3rem;
+}
+
+/* ============================= */
+/*             FLEX             */
+/* ============================= */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+
+/* ============================= */
+/*        ALIGNEMENT TEXTE      */
+/* ============================= */
+
+/* Forcer l'alignement à gauche */
+.text-left {
+  text-align: left;
+}
+
+/* ============================= */
+/*            TEXTES            */
+/* ============================= */
+.text-white {
+  color: #fff;
+}
+.text-neutral-200 {
+  color: #e5e5e5;
+  text-align: left;
+}
+.typo-body-highlight {
+  font-weight: 600;
+}
+
+/* Titre "Restons en contact" etc. */
+.heading-4 {
+  font-size: 2rem;      /* ~32px */
+  line-height: 2.4rem;  /* Aération du titre */
+  font-weight: 700;
+  margin: 0;            /* Contrôlé via gap au besoin */
+  text-align: left;
+}
+
+/* Paragraphe / Sous-texte */
+.typo-caption {
+  font-size: 0.9375rem; /* ~15px */
+  line-height: 1.4rem;
+}
+
+/* ============================= */
+/*        BOUTONS / INPUTS      */
+/* ============================= */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Cercles des icônes réseaux */
+.bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.hover\:bg-white\/10:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Centrer parfaitement l'icône dans son rond */
+.block.rounded-full.bg-white\/5.p-3 {
+  display: inline-flex;    /* Au lieu de block, pour centrer */
+  align-items: center;
+  justify-content: center;
+}
+
+.p-3 {
+  padding: 0.75rem; /* 12px */
+}
+.fill-white {
+  fill: white;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+  white-space: nowrap;
+}
+
+/* ============================= */
+/*       FORMULAIRE NEWSLETTER  */
+/* ============================= */
+.mt-5 {
+  margin-top: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.h-fit {
+  height: fit-content;
+}
+.w-full {
+  width: 100%;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.appearance-none {
+  appearance: none;
+}
+.border {
+  border-width: 1px;
+}
+.border-neutral-600 {
+  border-color: #525252;
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.px-6 {
+  padding: 9px 10px 1px 10px;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.leading-tight {
+  line-height: 1.25;
+}
+.placeholder-white::placeholder {
+  color: white;
+}
+.hover\:border-white:hover {
+  border-color: white;
+}
+
+/* ============================= */
+/*     BOUTON "S'INSCRIRE"       */
+/* ============================= */
+.group:hover .group-hover\:text-neutral-700 {
+  color: #404040;
+}
+.group:hover .group-hover\:translate-x-2 {
+  transform: translateX(0.5rem);
+}
+.rtl\:rotate-180 {
+  transform: rotate(180deg);
+}
+.stroke-black {
+  stroke: black;
+}
+.focus\:ring-primary:focus {
+  /* Effet "focus ring" si besoin */
+  box-shadow: 0 0 0 2px #999 inset;
+}
+
+/* ============================= */
+/*   UL SANS PUCE POUR ICÔNES   */
+/* ============================= */
+ul[data-testid="social-bar__links"] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ============================= */
+/*            FIN CSS           */
+/* ============================= */

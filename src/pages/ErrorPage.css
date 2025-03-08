@@ -1,0 +1,25 @@
+/* src/pages/ErrorPage.css */
+
+.error-page-container {
+    background-color: #000000; /* Fond blanc */
+    min-height: 100vh;      /* Prend tout l'écran */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .error-title {
+    color: #ffffff;      /* Texte noir */
+    font-size: 3rem;  /* Plus grand */
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+  }
+  
+  .error-subtitle {
+    color: #ffffff;     /* Texte noir */
+    font-size: 1.5rem;
+    font-family: sans-serif;
+  }
+  

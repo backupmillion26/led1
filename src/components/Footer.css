@@ -1,0 +1,298 @@
+/*******************************************************
+   Styles de base
+ *******************************************************/
+ .footer {
+  background-color: #000; /* Fond noir */
+  color: #fff;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 50px auto;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+/*******************************************************
+   PARTIE GAUCHE : (logo, langue, paiement, adresse)
+ *******************************************************/
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  flex: 0 0 284px; /* Largeur fixée en desktop */
+}
+
+/* Logo + sélecteur de langue côte à côte */
+.footer-logo-lang {
+  display: flex;
+  flex-direction: column; /* On empile en vertical */
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/*******************************************************
+   Bouton langue
+ *******************************************************/
+.language-selector {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.language-button {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.language-button:hover {
+  background-color: #222;
+}
+
+.language-arrow {
+  font-size: 0.8rem;
+}
+
+/* Liste déroulante */
+.language-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #333;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  display: none;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.language-dropdown li {
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.language-dropdown li:hover {
+  background-color: #444;
+}
+
+/* Au survol, on affiche le menu */
+.language-selector:hover .language-dropdown {
+  display: flex;
+}
+
+/*******************************************************
+   Icônes de paiement
+ *******************************************************/
+.payment-icons {
+  margin-top: 40px; /* Pousse vers le bas en desktop si besoin */
+  
+}
+
+.payment-logos-img {
+  max-width: 90%;
+  height: auto;
+  object-fit: contain;
+  justify-content: left;
+  margin-left: -25px;
+
+}
+
+/*******************************************************
+   Adresse + Copyright
+ *******************************************************/
+.footer-address {
+  margin: 0.5rem 0;
+  font-size: 0.7rem;
+  color: #ccc;
+  text-align: left;
+}
+.footer-address ~ p {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+/*******************************************************
+   Zone de DROITE : Les colonnes de liens
+ *******************************************************/
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 40px; /* Add significant gap between columns */
+}
+
+/* Chaque colonne */
+.footer-section {
+  margin-bottom: 2.5rem; /* Increased bottom margin */
+  flex: 0 0 200px; /* Slightly wider columns */
+  padding-right: 1.5rem;
+}
+
+.footer-section h3 {
+  font-size: 1.1rem; /* Slightly larger headers */
+  margin: 0 0 1.2rem 0; /* More space below headers */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.4rem 0;
+  transition: color 0.3s ease;
+}
+.footer-section h3:hover {
+  color: #ccc;
+}
+
+/* Petites flèches pour l'accordéon */
+.footer-section .arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  color: #fff;
+}
+.footer-section .arrow.open {
+  transform: rotate(90deg);
+}
+
+/* Liens */
+.footer-section a {
+  display: block;
+  margin: 0.7rem 0; /* More space between links */
+  font-size: 0.9rem;
+  color: #969696;
+  text-decoration: none;
+  line-height: 1.6; /* Increased line height */
+  text-align: left;
+  transition: color 0.3s ease;
+}
+.footer-section a:hover {
+  color: #fff;
+}
+
+/*******************************************************
+   Accordéon (mobile) : on cache le contenu
+ *******************************************************/
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.section-content.open {
+  max-height: 800px; 
+  opacity: 1;
+}
+
+/*******************************************************
+   Responsive Desktop  (>= 992px)
+ *******************************************************/
+@media (min-width: 992px) {
+  .footer-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px; /* Add gap between left column and links section */
+  }
+  .footer-left {
+    margin-bottom: 0;
+    margin-right: 3rem; /* More space to the right */
+  }
+  /* On retire l'accordéon en desktop : tout est affiché */
+  .footer-section h3 {
+    cursor: default;
+  }
+  .footer-section h3 .arrow {
+    display: none;
+  }
+  .section-content {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+  }
+  /* Adjust spacing for footer sections */
+  .footer-section {
+    padding-right: 2rem; /* More padding between columns */
+  }
+}
+
+/*******************************************************
+   RESPONSIVE MOBILE  (max-width: 768px)
+   => On améliore la version mobile
+ *******************************************************/
+@media (max-width: 768px) {
+  /* On empile TOUT en colonne */
+  .footer-inner {
+    margin: 0 auto;
+    flex-direction: column;
+    padding: 0 1.5rem; /* Increased padding */
+  }
+
+  .footer-left {
+    flex: initial;
+    width: 100%;
+    margin-bottom: 3rem; /* More space below left section */
+  }
+
+  /* Le logo + langue en alignement normal */
+  .footer-logo-lang {
+    align-items: flex-start;
+    margin-bottom: 2rem; /* More space */
+  }
+
+  .footer-logo-img {
+    margin-bottom: 1.2rem; /* More space */
+  }
+
+  /* On stacke les liens en 1 colonne pour plus de lisibilité */
+  .footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem; /* More space between sections */
+  }
+  
+  .footer-section {
+    flex: unset;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 1.5rem; /* More space */
+  }
+
+  /* Ajustement de la taille des textes pour mobile */
+  .footer-section h3 {
+    font-size: 1.1rem; /* Slightly larger */
+    padding: 0.5rem 0; /* More padding */
+  }
+  
+  .footer-section a {
+    font-size: 0.9rem;
+    margin: 0.8rem 0; /* More space between links */
+  }
+
+  /* On réduit un peu la marge entre les sections */
+  .section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+  .section-content.open {
+    max-height: 600px; /* juste moins grand, plus fluide */
+  }
+}

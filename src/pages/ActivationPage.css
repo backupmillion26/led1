@@ -1,0 +1,327 @@
+/*******************************************************
+ * 0) REMISE À ZÉRO DU BODY (pour éviter le blanc global)
+ ******************************************************/
+ html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1; /* Couleur de fond par défaut */
+  font-family: 'Poppins', sans-serif;
+}
+
+/******************************************************
+ * 1) CONTENEUR GLOBAL DE LA PAGE
+ ******************************************************/
+.activation-page-container {
+  background-color: #000; /* Fond noir global */
+  width: 100%;
+  min-height: 100vh; /* Au lieu de -1000vh */
+}
+
+/******************************************************
+ * 2) SECTION HERO (BANNIÈRE NOIRE)
+ ******************************************************/
+.activation-hero {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 0rem 2rem;
+  margin-top: 0;
+  padding-top: 4rem; /* pour l'espacement vertical */
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/******************************************************
+ * 3) BOUTON "SERVICE FOURNI PAR COINCOVER"
+ ******************************************************/
+.coincover-button {
+  display: block; 
+  margin: 2rem auto 0 auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.coincover-button:hover {
+  background-color: #333;
+}
+
+/******************************************************
+ * 4) FORMULAIRE + IMAGE (FOND NOIR)
+ ******************************************************/
+/* Le bloc global du form + image */
+.activation-main-block {
+  background-color: #000;
+  padding: 2rem 0;
+  margin: 0;
+}
+
+/* Container principal (image + form) */
+.activation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Image à gauche */
+.activation-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.activation-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Formulaire à droite */
+.activation-form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto; 
+  padding: 30px;
+  background-color: #000;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+/* Titre du form */
+.activation-form-container h3 {
+  color: #d4a0ff;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Labels */
+.input-label {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Groupes de champs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Champs de saisie */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.input-field::placeholder {
+  color: #949494;
+  font-size: 14px;
+}
+.input-field:focus {
+  border-color: #d4a0ff;
+  background-color: #262626;
+  outline: none;
+}
+
+/* Bouton "Continuer" */
+.form-button-group {
+  text-align: right;
+}
+.custom-button {
+  padding: 10px 30px;
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 8px 82px 5px 305px; /* Ajuste si besoin */
+}
+.custom-button:hover {
+  background-color: #d4a0ff;
+  color: #fff;
+}
+.custom-button:active {
+  background-color: #d4a0ff;
+  transform: scale(0.98);
+}
+
+/* Erreurs */
+.input-error {
+  border-color: red !important;
+}
+.error-message {
+  color: red;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/******************************************************
+ * 5) RESPONSIVE FORM (max-width: 768px)
+ ******************************************************/
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .activation-container {
+    flex-direction: column; /* On empile form + image */
+    align-items: center;
+    margin: -21px 10px -19px 25px;
+  }
+
+  /* On place le form avant l'image */
+  .activation-form-container {
+    order: 1;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .activation-image-container {
+    order: 2;
+    width: 90%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  /* === TAILLE DES BOUTONS RÉDUITE EN MOBILE === */
+  .custom-button {
+    padding: 8px 20px;
+    font-size: 12px;
+    margin: 0 auto; /* pour centrer ou ajuste si besoin */
+    display: block; /* pour passer en block si tu veux */
+  }
+
+  .coincover-button {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/******************************************************
+ * 6) SECTION CONTACT & NEWSLETTER (FOND MAUVE)
+ ******************************************************/
+.contact-newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #e3b4fc; /* Fond mauve */
+}
+.contact {
+  width: 48%;
+}
+.newsletter {
+  width: 48%;
+  text-align: right;
+}
+.contact h2,
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.contact p,
+.newsletter p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+/* Icônes de réseaux */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-left: 120px;
+}
+.social-icons img {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+}
+/* Champ email + bouton newsletter */
+.email-input {
+  width: 70%;
+  max-width: 250px;
+  padding: 0.5rem;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  text-align: left;
+  margin-right: 1rem;
+}
+.newsletter-button {
+  padding: 0.5rem 1.2rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.newsletter-button:hover {
+  background-color: #333;
+}
+
+/******************************************************
+ * 7) RESPONSIVE NEWSLETTER (max-width: 768px)
+ ******************************************************/
+@media (max-width: 768px) {
+  .contact-newsletter {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .contact,
+  .newsletter {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .social-icons {
+    justify-content: center;
+    padding-left: 0;
+  }
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+  .email-input {
+    width: 90%;
+    margin: 0 auto 1rem auto;
+  }
+  .newsletter-button {
+    width: 100%;
+  }
+}

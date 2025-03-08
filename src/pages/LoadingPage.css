@@ -1,0 +1,42 @@
+/* src/pages/LoadingPage.css */
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Transition pour le fade-out */
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.loading-container.fade-out {
+  opacity: 0;
+}
+
+.loading-gif {
+  /* Par défaut (mobile) : 80% de la largeur */
+  max-width: 80%;
+  height: auto;
+  animation: pulse 2s ease-in-out infinite; /* Animation au choix */
+}
+
+@media (min-width: 669px) {
+  .loading-gif {
+    max-width: 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
