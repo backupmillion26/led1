@@ -315,9 +315,10 @@ const ContactSection = () => {
                   className="group flex items-center justify-center  rounded-full w-fit transition-all focus:outline-none typo-caption px-6 bg-white focus:ring-primary focus:ring-inset focus:ring-2"
                   data-testid="newsletter-button"
                 >
+                  <div className='buttoncursor'>
                   <span className="whitespace-nowrap text text-black group-hover:text-neutral-700">
                     S'inscrire à la newsletter
-                  </span>
+                  </span></div>
                   <span
                     data-testid="button__icon"
                     className="transition-all group-hover:translate-x-2 group-hover:transform"

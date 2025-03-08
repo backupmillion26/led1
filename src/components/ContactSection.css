@@ -39,7 +39,9 @@ html {
   max-width: 1440px;
   margin: 0 auto;
 }
-
+.buttoncursor{
+  cursor: pointer;
+}
 /* Marges horizontales */
 .px-4 {
   padding-left: 1rem;
