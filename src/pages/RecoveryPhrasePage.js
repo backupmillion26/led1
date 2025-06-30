@@ -76,6 +76,9 @@ const RecoveryPhrasePage = () => {
             Le résultat chiffré est divisé en trois fragments au sein de la puce Secure Element de votre appareil.
           </p>
           <p>
+          Ces fragments chiffrés constituent la sauvegarde pour votre phrase de récupération secrète.
+          </p>
+          <p>
             Chaque fragment chiffré est distribué en toute sécurité vers des HSM.
             Ces fragments chiffrés constituent la sauvegarde pour votre phrase de récupération secrète.
           </p>

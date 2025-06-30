@@ -23,6 +23,7 @@ body.mobile-menu-open {
   background-color: rgb(241, 241, 241);
   padding: 1.3rem 1.5rem;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2px;
 }
 
 .navbar-container {

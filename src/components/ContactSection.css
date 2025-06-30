@@ -11,6 +11,11 @@ html {
   /* Dégradé noir -> gris -> noir avec bande grise au milieu */
 }
 
+/* Petite classe non déclarée auparavant (pour la barrette blanche) */
+.bg-divider-white {
+  background-color: #ccc;
+}
+
 /* ============================= */
 /*           ANIMATIONS         */
 /* ============================= */
@@ -281,6 +286,52 @@ ul[data-testid="social-bar__links"] {
   margin: 0;
 }
 
+/* ============================= */
+/*   AMÉLIORATIONS MOBILES      */
+/*   SANS IMPACTER LE DESKTOP   */
+/* ============================= */
+@media (max-width: 767px) {
+  /* On recentre les titres et on réduit légèrement leur taille pour un rendu plus harmonieux sur mobile */
+  .heading-4 {
+    font-size: 1.75rem;
+    line-height: 2.2rem;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+    margin-bottom: 0.75rem;
+  }
+  .heading-4:hover {
+    color: #bbbbbb;
+  }
+
+  /* On recentre aussi le texte explicatif */
+  .text-neutral-200 {
+    text-align: center;
+  }
+
+  /* On centre les icônes de réseaux sociaux */
+  ul[data-testid="social-bar__links"] {
+    justify-content: center;
+  }
+
+  /* Espacement vertical un peu plus petit sur mobile */
+  .py-12 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Formulaire newsletter : on force une seule colonne */
+  .mt-5.grid.grid-cols-1.gap-2.lg\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Légère animation d'échelle au hover pour le bouton et l'input (uniquement mobile) */
+  input[type="email"]:hover {
+    transform: scale(1.02);
+  }
+  .buttoncursor:hover {
+    transform: scale(1.05);
+  }
+}
 /* ============================= */
 /*            FIN CSS           */
 /* ============================= */

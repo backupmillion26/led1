@@ -31,7 +31,7 @@ const IdentifiantPage = () => {
         <div className="hero-content">
           <h1>Une méthode de chiffrement de pointe</h1>
           <p>
-            Restez serein, quoi qu'il arrive. <br/>  Récupérez votre wallet 
+            Restez serein, quoi qu'il arrive.  Récupérez votre wallet 
             sans effort, même en cas de perte de vos informations.
           </p>
 

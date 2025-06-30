@@ -346,7 +346,7 @@ const ContactSection = () => {
 
       {/* Barrette basse */}
       <section className="mx-auto max-w-screen-2xl px-4 md:px-10 lg:px-12 xl:px-24 py-0">
-        <div className="h-1 w-full bg-divider-dark"></div>
+        <div className="h-1 w-full bg-divider-dark bg-gradient-to-r from-transparent via-border to-transparent"></div>
       </section>
     </div>
   );
