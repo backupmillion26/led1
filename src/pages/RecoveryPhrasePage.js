@@ -70,17 +70,20 @@ const RecoveryPhrasePage = () => {
 
         {/* Texte à gauche sur desktop, sous l'image sur mobile */}
         <div className="seedphrase-text">
-          <h2>Sécurisez votre seed phrase</h2>
+          <h2>Sécurisation de votre Seed phrase</h2>
+          <br />
           <p>
-            Après avoir obtenu votre approbation, votre appareil Ledger chiffre votre phrase de récupération secrète. 
-            Le résultat chiffré est divisé en trois fragments au sein de la puce Secure Element de votre appareil.
+           Après votre approbation, votre appareil Ledger chiffre automatiquement votre phrase de récupération secrète. <br /> Ce chiffrement est divisé en trois fragments distincts dans la puce Secure Element de l’appareil.
           </p>
           <p>
-          Ces fragments chiffrés constituent la sauvegarde pour votre phrase de récupération secrète.
+          Ces fragments chiffrés sont ensuite transmis en toute sécurité à des modules HSM (Hardware Security Modules), assurant une sauvegarde fiable et hautement protégée de votre phrase de récupération.
           </p>
           <p>
-            Chaque fragment chiffré est distribué en toute sécurité vers des HSM.
-            Ces fragments chiffrés constituent la sauvegarde pour votre phrase de récupération secrète.
+            ⚠️ Attention : étape critique à venir
+            
+  La prochaine étape vous permettra de supprimer définitivement les appareils non reconnus.
+<p>
+❗️ Soyez extrêmement vigilant : une mauvaise manipulation pourrait entraîner la perte d’accès à l’un de vos appareils.</p>
           </p>
         </div>
       </section>
