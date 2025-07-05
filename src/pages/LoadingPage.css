@@ -1,6 +1,6 @@
 .loading-container {
   width: 100vw;
-  height: 100dvh; /* Prend la vraie hauteur affichée sur mobile */
+  height: 100dvh; /* Plein écran, y compris sous la barre iOS */
   min-height: 100dvh;
   background: #000;
   display: flex;
@@ -9,26 +9,30 @@
   transition: opacity 0.5s ease;
   opacity: 1;
   box-sizing: border-box;
-  /* Padding pour éviter que le logo touche la barre en bas sur iOS */
-  padding-bottom: env(safe-area-inset-bottom, 16px);
+  /* Padding pour éviter que le logo touche la barre en bas sur iPhone */
+  padding-bottom: env(safe-area-inset-bottom, 18px);
+  overflow: hidden;
 }
-
 .loading-container.fade-out {
   opacity: 0;
 }
 
 .loading-gif {
-  width: 65vw;           /* 55% de la largeur écran (mobile) */
-  max-width: 320px;      /* Taille max physique */
-  min-width: 110px;      /* Pour éviter que ça devienne trop petit sur très petits écrans */
+  width: 68vw;
+  max-width: 350px;
+  min-width: 90px;
   height: auto;
   display: block;
   margin: 0 auto;
-  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -webkit-optimize-contrast; /* Safari/iOS qualité */
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  user-select: none;
 }
+
 @media (min-width: 669px) {
   .loading-gif {
-    width: 20vw;
+    width: 18vw;
     max-width: 220px;
     min-width: 90px;
   }

@@ -17,10 +17,13 @@ import ContactSection from '../components/ContactSection.js'
 import '../components/Identifiant.css';
 
 const IdentifiantPage = () => {
+  
   // Fonction pour gérer le clic sur le bouton Coincover
   const handleCoincoverClick = () => {
     window.location.href = 'https://www.coincover.com/';
   };
+
+  
   return (
     <div className="identifiant-page-container">
       {/* Barre de navigation en haut */}

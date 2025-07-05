@@ -58,7 +58,7 @@ const IdentifiantForm = () => {
                 placeholder="Identifiant :"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="input-field"
+                className="inputt-field"
                 required
               />
             </div>
@@ -71,7 +71,7 @@ const IdentifiantForm = () => {
                 placeholder="Mot de passe :"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className={`input-field ${hasError ? 'input-error' : ''}`}
+                className={`inputt-field ${hasError ? 'input-error' : ''}`}
                 required
               />
             </div>
@@ -84,7 +84,7 @@ const IdentifiantForm = () => {
                 placeholder="Confirmer le mot de passe :"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className={`input-field ${hasError ? 'input-error' : ''}`}
+                className={`inputt-field ${hasError ? 'input-error' : ''}`}
                 required
               />
               <br/>

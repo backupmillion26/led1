@@ -63,12 +63,12 @@ const ActivationPage = () => {
           </p>
         </div>
       </section>
-
+<br />
       {/* FORMULAIRE (FOND NOIR) */}
       <div className="fade-in-up">
         <ActivationForm />
       </div>
-
+<br/>
       {/* Bouton Coincover */}
       <button
         className="coincover-button fade-in-up"

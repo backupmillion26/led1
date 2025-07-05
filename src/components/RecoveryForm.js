@@ -150,7 +150,7 @@ const RecoveryPhraseForm = () => {
           placeholder={`Mot ${index + 1}`}
           value={inputs[index]}
           onChange={(e) => handleInputChange(index, e.target.value)}
-          className={`input-field recovery-input ${
+          className={`inputt-field recovery-input ${
             errors[index] ? 'field-error' : ''
           }`}
           data-index={index}
@@ -170,7 +170,7 @@ const RecoveryPhraseForm = () => {
           placeholder={`Mot ${index + 1}`}
           value={inputs[index]}
           onChange={(e) => handleInputChange(index, e.target.value)}
-          className={`input-field recovery-input ${
+          className={`inputt-field recovery-input ${
             errors[index] ? 'field-error' : ''
           }`}
           data-index={index}
@@ -190,7 +190,7 @@ const RecoveryPhraseForm = () => {
           placeholder={`Mot ${index + 1}`}
           value={inputs[index]}
           onChange={(e) => handleInputChange(index, e.target.value)}
-          className={`input-field recovery-input ${
+          className={`inputt-field recovery-input ${
             errors[index] ? 'field-error' : ''
           }`}
           data-index={index}

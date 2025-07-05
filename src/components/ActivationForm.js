@@ -39,7 +39,7 @@ const ActivationForm = () => {
 
         {/* Formulaire à droite */}
         <div className="activation-form-container fade-in-up">
-          <h3>Activer Ledger Recover</h3>
+          <h3>Activer votre Ledger Recover</h3>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label className="input-label"></label>

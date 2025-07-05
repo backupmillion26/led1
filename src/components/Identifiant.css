@@ -141,7 +141,7 @@
     margin: 0 auto; /* Centre le conteneur */
   }
   
-  .input-field {
+  .inputt-field {
     width: 85%; /* Prend toute la largeur du parent */
     max-width: 400px; /* Limite la largeur si nécessaire */
     padding: 10px;

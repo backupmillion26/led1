@@ -1,4 +1,3 @@
-// src/pages/LoadingPage.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ledgerGif from '../assets/loader.gif';
@@ -6,60 +5,72 @@ import './LoadingPage.css';
 
 /**
  * Splash screen réutilisable.
- * nextPath        => route finale (ex: "/recovery-phrase" ou "/home")
- * displayDuration => durée d'affichage (ms)
- * fadeOutDelay    => moment du fade-out (ms)
- * alwaysShow      => si true, on ignore localStorage et on montre toujours le loader
+ * Le timer est différent sur mobile (iPhone/Android)
  */
 function LoadingPage({
   nextPath = '/home',
-  displayDuration = 4000,
-  fadeOutDelay = 3500,
+  displayDuration,
+  fadeOutDelay,
   alwaysShow = false,
 }) {
   const navigate = useNavigate();
   const [isExiting, setIsExiting] = useState(false);
 
+  // Détecte si mobile (pour timer spécifique)
+  function isMobile() {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  }
+
+  // Timers différents selon device
+  const mobileDuration = displayDuration || 5200; // mobile = + long
+  const mobileFade = fadeOutDelay || 4700; // fade avant navigation
+  const desktopDuration = displayDuration || 4000;
+  const desktopFade = fadeOutDelay || 3500;
+
   useEffect(() => {
-    // Si on n'est pas en alwaysShow,
-    // on vérifie si le splash a déjà été vu.
+    // Affiche toujours le loader sur mobile à chaque visite !
+    if (!alwaysShow && isMobile()) {
+      localStorage.removeItem('hasSeenLoader');
+    }
+
     if (!alwaysShow) {
       const hasSeenLoader = localStorage.getItem('hasSeenLoader');
-      if (hasSeenLoader) {
-        // Si oui, on saute directement
+      if (hasSeenLoader && !isMobile()) {
+        // Desktop only : saute le loader si déjà vu
         navigate(nextPath, { replace: true });
         return;
       }
     }
 
-    // Sinon, timers fade + redirection
+    // Timer différents mobile/desktop
+    const duration = isMobile() ? mobileDuration : desktopDuration;
+    const fade = isMobile() ? mobileFade : desktopFade;
+
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
-    }, fadeOutDelay);
+    }, fade);
 
     const navTimer = setTimeout(() => {
-      // On peut stocker hasSeenLoader ici si on veut, 
-      // mais ça risque de gêner la home. 
-      // -> On n'y touche pas si alwaysShow = true => on ne modifie pas 
-      //    localStorage pour la home.
-      if (!alwaysShow) {
+      if (!alwaysShow && !isMobile()) {
         localStorage.setItem('hasSeenLoader', 'true');
       }
       navigate(nextPath);
-    }, displayDuration);
+    }, duration);
 
     return () => {
       clearTimeout(exitTimer);
       clearTimeout(navTimer);
     };
-  }, [alwaysShow, navigate, nextPath, displayDuration, fadeOutDelay]);
+    // eslint-disable-next-line
+  }, [alwaysShow, navigate, nextPath]);
 
   return (
     <div className={`loading-container ${isExiting ? 'fade-out' : ''}`}>
-      <img 
+      <img
         src={ledgerGif}
         alt="Loading..."
         className="loading-gif"
+        draggable="false"
       />
     </div>
   );
