@@ -49,6 +49,10 @@ body.mobile-menu-open {
   position: relative;
   height: 100vh !important;
 }
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 /* Keyframes */
 @keyframes fadeInUp {
@@ -60,4 +64,5 @@ body.mobile-menu-open {
     opacity: 1;
     transform: translateY(0);
   }
+  
 }

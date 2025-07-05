@@ -6,10 +6,10 @@ html {
 }
 /* Fond dégradé proche du style Ledger */
 .bg-grey-linear {
-  background: linear-gradient(109deg, #000 11.64%, #181818 49.04%, #000 86.45%);
-  background-image: linear-gradient(109deg, rgb(0, 0, 0) 11.64%, rgb(24, 24, 24) 49.04%, rgb(0, 0, 0) 86.45%);
-  /* Dégradé noir -> gris -> noir avec bande grise au milieu */
+  background-color: #000;
+  background-image: linear-gradient(109deg, #000 11.64%, #181818 49.04%, #000 86.45%);
 }
+
 
 /* Petite classe non déclarée auparavant (pour la barrette blanche) */
 .bg-divider-white {
@@ -307,6 +307,11 @@ ul[data-testid="social-bar__links"] {
   .text-neutral-200 {
     text-align: center;
   }
+.heading-4,
+.text-neutral-200 {
+  text-align: center !important;
+  font-size: 1.1rem !important;
+}
 
   /* On centre les icônes de réseaux sociaux */
   ul[data-testid="social-bar__links"] {

@@ -26,7 +26,12 @@
     opacity: 0.9;
     transition: opacity 0.5s ease;
   }
-  
+  /* Sur mobile : animation plus rapide */
+@media (max-width: 768px) {
+  .logo-track {
+    animation-duration: 10s !important; /* plus rapide (ajuste si tu veux encore plus) */
+  }
+}
   @keyframes scroll {
     0% {
       transform: translateX(0);
