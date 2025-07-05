@@ -130,6 +130,9 @@ const Home = () => {
         <strong>Votre identité, la clé de votre wallet.</strong> Restaurez facilement l'accès
         à votre wallet avec Ledger Recover™ via Ledger Live™, grâce à votre identité.
       </div>
+      
+      <br />
+
     </div>
   </div>
 </section>

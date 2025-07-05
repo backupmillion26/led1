@@ -293,6 +293,27 @@
 .newsletter-button:hover {
   background-color: #333;
 }
+.activation-separator {
+      width: 100%;
+    max-width: 900px;
+    height: 2px;
+    margin: 40px auto 40px auto;
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient(295deg, #000000, #d4a0ff, #000000);
+    box-shadow: 0 2px -4px 0 #d4a0ff55;
+    opacity: 1.85;
+    transition: width 0.2s;
+}
+
+/* Responsive : plus fin et moins large sur mobile */
+@media (max-width: 768px) {
+  .activation-separator {
+    width: 80%;
+    height: 3px;
+    margin: 32px auto 32px auto;
+  }
+}
 
 /******************************************************
  * 7) RESPONSIVE NEWSLETTER (max-width: 768px)

@@ -13,6 +13,7 @@ import instagramLogo4 from '../assets/reseau6.png';
 import instagramLogo5 from '../assets/reseau7.png';
 import instagramLogo6 from '../assets/reseau8.png';
 import ContactSection from '../components/ContactSection';
+import phrasefire from '../assets/phrasefire.mp4';
 
 const RecoveryPhrasePage = () => {
   // Add scroll animation effect
@@ -60,13 +61,19 @@ const RecoveryPhrasePage = () => {
       {/* SECTION "Sécurisez votre seed phrase" */}
       <section className="seedphrase-section fade-in-up">
         {/* Image ou GIF en haut au centre sur mobile */}
-        <div className="seedphrase-image-container">
-          <img 
-            src="https://i.ibb.co/jvDN6JPy/visual-ledger-recover.png" 
-            alt="Phone and Ledger" 
-            className="seedphrase-image"
-          />
-        </div>
+       <div className="seedphrase-image-container">
+  <video
+    className="seedphrase-video"
+    src={require('../assets/phrasefire.mp4')}
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    style={{ borderRadius: '20px', maxWidth: '100%', boxShadow: '0 8px 32px #000a' }}
+  />
+</div>
+
 
         {/* Texte à gauche sur desktop, sous l'image sur mobile */}
         <div className="seedphrase-text">

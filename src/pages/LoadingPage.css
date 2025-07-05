@@ -2,32 +2,26 @@
 .loading-container {
   width: 100vw;
   height: 100vh;
+  min-height: 100dvh; /* pour iPhone plein écran */
   background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Transition pour le fade-out */
   transition: opacity 0.5s ease;
   opacity: 1;
+  box-sizing: border-box;
+  padding-bottom: env(safe-area-inset-bottom, 0px); /* POUR IPHONE NOTCH! */
 }
-
-.loading-container.fade-out {
-  opacity: 0;
-}
+.loading-container.fade-out { opacity: 0; }
 
 .loading-gif {
-  /* Par défaut (mobile) : 80% de la largeur */
-  max-width: 80%;
+  max-width: 70vw;
   height: auto;
-  animation: pulse 2s ease-in-out infinite; /* Animation au choix */
+}
+@media (min-width: 669px) {
+  .loading-gif { max-width: 35vw; }
 }
 
-@media (min-width: 669px) {
-  .loading-gif {
-    max-width: 50%;
-  }
-}
 
 @keyframes pulse {
   0% {

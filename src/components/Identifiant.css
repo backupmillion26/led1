@@ -252,7 +252,7 @@
   
     .identifiant-form-container {
       order: 1; /* Formulaire en premier */
-      padding: 20px;
+              margin: 6px 1px 6px 27px;
     }
   
     .gif-container {

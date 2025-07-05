@@ -2,7 +2,7 @@
 import React from 'react';
 import LogoBar from '../components/Logobar.js';
 import IdentifiantForm from '../components/Identifiant.js';
-
+import Footer from '../components/Footer'
 import facebookLogo from '../assets/reseau1.png';
 import twitterLogo from '../assets/reseau2.png';
 import instagramLogo from '../assets/reseau3.png';
@@ -50,6 +50,10 @@ const IdentifiantPage = () => {
         Service fourni par Coincover
       </button>
       <br/>
+      <div className="activation-separrator" />
+
+<div><Footer /></div>
+   
     </div>
   );
 };

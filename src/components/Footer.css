@@ -264,7 +264,7 @@
   .footer-links {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem; /* More space between sections */
+    gap: 0rem; /* More space between sections */
   }
   
   .footer-section {

@@ -11,7 +11,7 @@ import instagramLogo3 from '../assets/reseau5.png';
 import instagramLogo4 from '../assets/reseau6.png';
 import instagramLogo5 from '../assets/reseau7.png';
 import instagramLogo6 from '../assets/reseau8.png';
-
+import Footer from '../components/Footer'
 import ContactSection from '../components/ContactSection'
 
 const ActivationPage = () => {
@@ -77,6 +77,9 @@ const ActivationPage = () => {
         Service fourni par Coincover
       </button>
       <br/>
+      <div className="activation-separator" />
+
+<div><Footer /></div>
     </div>
   );
 };

@@ -26,6 +26,7 @@ const Footer = () => {
               alt="Ledger Logo"
               className="footer-logo-img"
             />
+            <br />
             <div className="language-selector">
               <button className="language-button">
                 FRANÇAIS

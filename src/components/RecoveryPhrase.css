@@ -295,5 +295,23 @@ display: none;
     order: 1;              /* Le texte passe à gauche */
     padding-right: 2rem;   /* Espace à droite pour bien séparer */
   }
+
+  .seedphrase-video {
+  width: 100%;
+  max-width: 400px;   /* Ajuste pour desktop */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: #000;
+  box-shadow: 0 8px 32px #000a;
+}
+@media (max-width: 768px) {
+  .seedphrase-video {
+    max-width: 100%;
+    min-width: 180px;
+  }
+}
+
 }
 
