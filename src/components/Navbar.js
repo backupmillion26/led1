@@ -45,6 +45,26 @@ const Navbar = () => {
   const closeMenu = () => {
     setMobileOpen(false);
   };
+// Blocage du scroll sur iOS/Safari, solution robuste
+useEffect(() => {
+  if (mobileOpen) {
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.width = '100vw';
+  } else {
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    // Revenir là où l'utilisateur était
+    if (scrollY) window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  }
+  return () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+  };
+}, [mobileOpen]);
 
   // Sur desktop, on active le dropdown au survol
   // Sur mobile, on l’active si le menu est déjà ouvert et qu’on clique

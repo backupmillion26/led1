@@ -1,36 +1,34 @@
-/* src/pages/LoadingPage.css */
 .loading-container {
   width: 100vw;
-  height: 100vh;
-  min-height: 100dvh; /* pour iPhone plein écran */
-  background-color: black;
+  height: 100dvh; /* Prend la vraie hauteur affichée sur mobile */
+  min-height: 100dvh;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.5s ease;
   opacity: 1;
   box-sizing: border-box;
-  padding-bottom: env(safe-area-inset-bottom, 0px); /* POUR IPHONE NOTCH! */
+  /* Padding pour éviter que le logo touche la barre en bas sur iOS */
+  padding-bottom: env(safe-area-inset-bottom, 16px);
 }
-.loading-container.fade-out { opacity: 0; }
+
+.loading-container.fade-out {
+  opacity: 0;
+}
 
 .loading-gif {
-  max-width: 70vw;
+  max-width: 120px;     /* Taille max fixe pour éviter les surprises (ou adapte à la taille de ton gif réel) */
+  width: 40vw;
   height: auto;
+  display: block;
+  margin: 0 auto;
+  image-rendering: -webkit-optimize-contrast; /* Force la meilleure qualité sur Safari */
 }
+
 @media (min-width: 669px) {
-  .loading-gif { max-width: 35vw; }
-}
-
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
+  .loading-gif {
+    max-width: 200px; /* Plus grand sur desktop */
+    width: 20vw;
   }
 }
