@@ -18,17 +18,18 @@
 }
 
 .loading-gif {
-  max-width: 120px;     /* Taille max fixe pour éviter les surprises (ou adapte à la taille de ton gif réel) */
-  width: 40vw;
+  width: 65vw;           /* 55% de la largeur écran (mobile) */
+  max-width: 320px;      /* Taille max physique */
+  min-width: 110px;      /* Pour éviter que ça devienne trop petit sur très petits écrans */
   height: auto;
   display: block;
   margin: 0 auto;
-  image-rendering: -webkit-optimize-contrast; /* Force la meilleure qualité sur Safari */
+  image-rendering: -webkit-optimize-contrast;
 }
-
 @media (min-width: 669px) {
   .loading-gif {
-    max-width: 200px; /* Plus grand sur desktop */
     width: 20vw;
+    max-width: 220px;
+    min-width: 90px;
   }
 }

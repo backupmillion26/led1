@@ -52,6 +52,7 @@ const RecoveryPhrasePage = () => {
         <div className="hero-content fade-in-up">
           <h1>La solution de sauvegarde numérique pour préserver l'accès à votre wallet</h1>
           <p>Restez serein : protégez votre phrase de récupération, quoi qu'il arrive.</p>
+          <button className="coincover-button fade-in-up">Service fourni par Coincover</button>
         </div>
       </section>
 
