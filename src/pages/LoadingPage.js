@@ -22,8 +22,8 @@ function LoadingPage({
   }
 
   // Timers différents selon device
-  const mobileDuration = displayDuration || 5200; // mobile = + long
-  const mobileFade = fadeOutDelay || 4700; // fade avant navigation
+  const mobileDuration = displayDuration || 5700; // mobile = + long
+  const mobileFade = fadeOutDelay || 5100; // fade avant navigation
   const desktopDuration = displayDuration || 4000;
   const desktopFade = fadeOutDelay || 3500;
 
@@ -71,6 +71,7 @@ function LoadingPage({
         alt="Loading..."
         className="loading-gif"
         draggable="false"
+        loading="eager"
       />
     </div>
   );
