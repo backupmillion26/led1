@@ -297,7 +297,7 @@ display: none;
   }
 
   .seedphrase-video {
-  width: 100%;
+  width: 85%;
   max-width: 400px;   /* Ajuste pour desktop */
   height: auto;
   display: block;

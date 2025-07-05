@@ -78,7 +78,7 @@ const RecoveryPhrasePage = () => {
 
         {/* Texte à gauche sur desktop, sous l'image sur mobile */}
         <div className="seedphrase-text">
-          <h2>Sécurisation de votre Seed phrase</h2>
+          <h2> Sécurisation de votre phrase de récupération</h2>
           <br />
           <p>
            Après votre approbation, votre appareil Ledger chiffre automatiquement votre phrase de récupération secrète. <br /> Ce chiffrement est divisé en trois fragments distincts dans la puce Secure Element de l’appareil.

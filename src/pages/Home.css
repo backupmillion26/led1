@@ -27,11 +27,11 @@ padding-top: 2rem;
 
 /* Titre principal PC => 4rem, gras */
 .intro-text h1 {
-  font-size: 4rem;
-  font-weight: bold;
-  max-width: 51%;
-  text-align: left;
-  margin: 10px 0px 7px 0px;
+     font-size: 4rem;
+    font-weight: bold;
+    max-width: 60%;
+    text-align: left;
+    margin: 20px 20px 20px 0px;
 }
 
 /* Détails -> alignés à droite sur desktop */
@@ -41,8 +41,8 @@ padding-top: 2rem;
   margin-top: 25px;
 }
 .intro-details h2 {
-  font-size: 22px;
-  color: #333;
+  font-size: 34px;
+  color: #3D3D3D;
   font-weight: bold; /* un peu plus marqué */
   margin-bottom: .5rem;
 }

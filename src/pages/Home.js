@@ -1,7 +1,7 @@
 // src/pages/Home.js
 import React, { useEffect } from 'react';
 import './Home.css';
-
+import CookieBanner from '../components/CookieBanner'; // AJOUT ICI
 import mainImage from '../assets/main-image.png';
 import ledgerGif from '../assets/loader.gif';
 
@@ -138,7 +138,8 @@ const Home = () => {
 </section>
 
 <ContactSection/>
-     
+   {/* CookieBanner à la fin, toujours au-dessus du Footer */}
+      <CookieBanner />  
     </div>
   );
 };

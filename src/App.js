@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
@@ -24,11 +23,7 @@ function App() {
           {/* 1) "/" => LoaderAndHome => loader unique la 1ère fois */}
           <Route path="/" element={<LoaderAndHome />} />
 
-          {/*
-            2) "/loading-recovery" => LoadingPage
-               => alwaysShow = true pour forcer le splash 
-                  même si on a déjà vu la home
-          */}
+          {/* Splash pour loading recovery */}
           <Route
             path="/loading-recovery"
             element={
@@ -48,7 +43,6 @@ function App() {
               <>
                 <Navbar />
                 <RecoveryPhrase />
-                
               </>
             }
           />
@@ -60,7 +54,6 @@ function App() {
               <>
                 <Navbar />
                 <ActivationPage />
-               
               </>
             }
           />
@@ -72,7 +65,18 @@ function App() {
               <>
                 <Navbar />
                 <IdentifiantPage />
-               
+              </>
+            }
+          />
+
+          {/* Home avec CookieBanner */}
+          <Route 
+            path="/home"
+            element={
+              <>
+                <Navbar />
+                <Home />
+                <Footer />
               </>
             }
           />

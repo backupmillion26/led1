@@ -316,7 +316,8 @@ ul[data-testid="social-bar__links"] {
   /* Espacement vertical un peu plus petit sur mobile */
   .py-12 {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+        padding-bottom: 2rem;
+        margin-top: 2rem;
   }
 
   /* Formulaire newsletter : on force une seule colonne */
