@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 /* Animation des éléments */
@@ -30,19 +29,26 @@
 .App-link {
   color: #61dafb;
 }
+
+/* CORRIGÉ : PAS DE 100vw ! */
+/* ===== NAVBAR.CSS OU APP.CSS ===== */
 html, body {
-  width: 100vw !important;
-  max-width: 100vw !important;
-  overflow-x: hidden !important;
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+  /* height: 100%;  <--- NE JAMAIS REMETTRE ÇA ! */
 }
+
+
+
 body.mobile-menu-open {
   overflow: hidden !important;
   position: relative;
   height: 100vh !important;
 }
-
 
 /* Keyframes */
 @keyframes fadeInUp {
@@ -54,5 +60,4 @@ body.mobile-menu-open {
     opacity: 1;
     transform: translateY(0);
   }
-  
 }

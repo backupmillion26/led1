@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Empêche le scroll horizontal */
-  height: 100%;       /* Important pour bloquer le scroll vertical */
+      /* Important pour bloquer le scroll vertical */
 }
 
 /* Bloque le scroll vertical quand le menu mobile est ouvert */

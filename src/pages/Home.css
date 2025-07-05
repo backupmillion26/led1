@@ -11,6 +11,7 @@
   color: #000;
   margin: 0;
   padding: 0;
+  /* PAS de height, PAS de overflow ici ! */
 }
 
 /* ======== INTRO SECTION (haut) ======== */
@@ -18,32 +19,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-padding-top: 2rem;
+  padding-top: 2rem;
   background-color: #f1f1f1;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto; /* Center the section */
+  margin: 0 auto;
 }
 
 /* Titre principal PC => 4rem, gras */
 .intro-text h1 {
-     font-size: 4rem;
-    font-weight: bold;
-    max-width: 60%;
-    text-align: left;
-    margin: 20px 20px 20px 0px;
+  font-size: 4rem;
+  font-weight: bold;
+  max-width: 60%;
+  text-align: left;
+  margin: 20px 20px 20px 0px;
 }
 
 /* Détails -> alignés à droite sur desktop */
 .intro-details {
   text-align: right;
-  align-self: flex-start; /* Aligns the intro-details to the top */
+  align-self: flex-start;
   margin-top: 25px;
 }
 .intro-details h2 {
   font-size: 34px;
   color: #3D3D3D;
-  font-weight: bold; /* un peu plus marqué */
+  font-weight: bold;
   margin-bottom: .5rem;
 }
 .intro-details p {
@@ -52,13 +53,12 @@ padding-top: 2rem;
   margin-bottom: 1rem;
 }
 
-/* Bouton orange => #ff5300, arrondi comme tu le souhaites */
 .offer-button {
   padding: 19px 26px;
   background-color: #f25a0e;
   color: #fff;
   border: none;
-  border-radius: 30px; /* arrondi */
+  border-radius: 30px;
   cursor: pointer;
   font-weight: 500;
   font-size: 1rem;
@@ -67,20 +67,17 @@ padding-top: 2rem;
   background-color: #e04a00;
 }
 
-/* ======== MAIN SECTION ======== 
-   => On centre le container en text-align center
-*/
+/* ======== MAIN SECTION ======== */
 .main-section {
   padding: 2rem;
   background-color: #f1f1f1;
-  text-align: center; /* centré */
-  position: relative; /* pour remonter l'image si besoin */
+  text-align: center;
+  position: relative;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto; /* Center the section */
+  margin: 0 auto;
 }
 
-/* L'image => plus grande & un peu remontée */
 .home-imagee {
   display: block;
   margin: -15px auto;
@@ -89,16 +86,14 @@ padding-top: 2rem;
   height: auto;
 }
 
-/* Titre "La solution..." => plus gros, gras, centré */
 .main-section .main-title {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
   max-width: 900px;
-  margin: 2.7rem auto 1.5rem auto; /* center horizontally */
+  margin: 2.7rem auto 1.5rem auto;
 }
 
-/* Features => centrés en inline-block */
 .features {
   display: flex;
   justify-content: center;
@@ -129,13 +124,12 @@ padding-top: 2rem;
   font-size: 1rem;
   transition: background-color 0.3s, color 0.3s;
 }
-
 .coincover-button:hover {
   background-color: #fff !important;
   color: #000 !important;
 }
 .coincover-button1{
-  display: block; /* pour être centré */
+  display: block;
   margin: 2rem auto 0 auto; 
   padding: 0.75rem 1.5rem;
   background-color: #000;
@@ -145,25 +139,24 @@ padding-top: 2rem;
   cursor: pointer;
   font-size: 1rem;
 }
-
 .coincover-button1:hover{
   background-color: #e04a00 !important;
   color: #000 !important;
 }
+
 /* ======== LEDGER-LIVE (barre noire) ======== */
 .ledger-live {
   background-color: #000;
   color: #fff;
   padding: 2rem 0;
   text-align: left;
-  width: 100%; /* Full width background */
+  width: 100%;
   margin-top: 5rem;  
 }
 .ledger-live-container {
   width: 100%;
   max-width: 1200px;
-
-
+  margin: 0 auto;
 }
 
 .ledger-gif-wrapper {
@@ -178,103 +171,45 @@ padding-top: 2rem;
 /* ======== Sécurité / Sérénité / Simplicité ======== */
 .security-row {
   display: flex;
-  align-items: flex-start;      /* Aligne le haut du texte sur une même ligne */
-  gap: 2rem;                    /* Espace horizontal entre titre et description */
+  align-items: flex-start;
+  gap: 2rem;
   margin-bottom: 2rem;  
-  margin-top: 5rem;        /* Espacement entre chaque bloc */
+  margin-top: 5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
 }
-
+.security-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 .security-title {
   width: 36%;
   font-size: 2.3rem;
   font-weight: bold;
   border-right: 1px solid #fff;
   padding-right: 1rem;
-  
-     /* Espace entre le titre et le trait */
 }
-
 .security-description {
-  flex: 1;                      /* Occupe l'espace restant sur la droite */
+  flex: 1;
   font-size: 1.1rem;
   line-height: 1.6;
-  padding-left: 1rem;           /* Espace à gauche de la description après le trait */
+  padding-left: 1rem;
 }
-
 .security-row:not(:last-child) {
-  border-bottom: 1px solid #fff;   /* Séparateur horizontal entre les différents blocs */
+  border-bottom: 1px solid #fff;
   padding-bottom: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
-/* ======== SECTION LEDGER-LIVE (barre noire) ======== */
-.ledger-live {
-  background-color: #000;          /* Exemple : fond sombre */
-  color: #fff;                     /* Texte en blanc */
-  padding: 2rem 1rem;             /* Ajuste selon tes besoins */
-}
-
-.ledger-live-container {
-  max-width: 1200px;               /* Largeur max du conteneur */
-  margin: 0 auto;                  /* Centre le conteneur */
-}
-
-/* ======== EFFET SCROLL ======== */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  will-change: opacity, transform;
-}
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Add a transition for when elements leave the viewport */
-.fade-in-up:not(.visible) {
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-/* Staggered animations for multiple elements */
-.fade-in-up:nth-child(1) { transition-delay: 0.1s; }
-.fade-in-up:nth-child(2) { transition-delay: 0.2s; }
-.fade-in-up:nth-child(3) { transition-delay: 0.3s; }
-.fade-in-up:nth-child(4) { transition-delay: 0.4s; }
-
-/* Different animation for security rows */
-.security-row {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-  will-change: opacity, transform;
-}
-
-.security-row.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Add a transition for when security rows leave the viewport */
-.security-row:not(.visible) {
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-/* Staggered delays for security rows */
-.security-row:nth-child(1) { transition-delay: 0.1s; }
-.security-row:nth-child(2) { transition-delay: 0.3s; }
-.security-row:nth-child(3) { transition-delay: 0.5s; }
-
 /* ======== RESPONSIVE < 768px ======== */
 @media screen and (max-width: 768px) {
-  /* Intro Section */
   .intro-section {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 2rem;
-
   }
   .intro-text h1 {
     font-size: 2.7rem;
@@ -303,8 +238,6 @@ padding-top: 2rem;
     margin: 9px;
     display: block;
   }
-
-  /* Main Section */
   .main-section {
     padding: 1rem;
   }
@@ -313,32 +246,11 @@ padding-top: 2rem;
     max-width: 300px;
     margin: 0 auto 1rem auto;
   }
-  
-  /* 
-     Masque le titre «La solution de sauvegarde...» 
-     et les features "Chiffrement..." / "Conservation..."
-     UNIQUEMENT sur mobile 
-  */
-  .main-title {
-    display: none; 
-  }
-  .features {
-    display: none;
-  }
-
-  .coincover-button {
-    font-size: 0.9rem;
-    margin: 1rem auto;
-
-  }
-
-  /* Ledger Live Section */
-  .ledger-live {
-    padding: 1rem;
-  }
-  .ledger-gif {
-    max-width: 150px;
-  }
+  .main-title { display: none; }
+  .features { display: none; }
+  .coincover-button { font-size: 0.9rem; margin: 1rem auto; }
+  .ledger-live { padding: 1rem; }
+  .ledger-gif { max-width: 150px; }
   .security-row {
     flex-direction: column;
     gap: 0.5rem;
@@ -358,19 +270,17 @@ padding-top: 2rem;
     font-size: 1rem;
     padding-left: 0;
   }
-
   .ledger-live-container {
-    padding: 0 1rem; /* Smaller padding on mobile */
+    padding: 0 1rem;
   }
 }
 
 /* ======== RESPONSIVE MEDIUM SCREENS 769px-1024px ======== */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .intro-text h1 {
-    font-size: 3rem; /* Slightly smaller font on medium screens */
+    font-size: 3rem;
     text-align: left;
   }
-  
   .intro-section, 
   .main-section,
   .ledger-live-container {
@@ -389,3 +299,5 @@ padding-top: 2rem;
     margin: 0 auto;
   }
 }
+
+/* ======== FIN HOME.CSS ======== */
